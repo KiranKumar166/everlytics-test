@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> table using JS and JSON </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Equipment-wise details</h1>
+        <br />
+        <div id="machinedatadivcontainer">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    var machinedata = [
+{
+	"machine_name": "Auto Winding Machine",
+	"machine_id": "machine001",
+	"current": 0,
+	"voltage": 0,
+	"power_factor": 0,
+	"active_power": 0.0,
+	"apparent_power": 0.0,
+	"reactive_power": 0.0,
+	"daily_energy": 0,
+	"monthly_energy": 0,
+	"yearly_energy": 0,
+	"idle_daily": 0,
+	"idle_monthly": 0,
+	"idle_yearly": 0
+},
+{
+	"machine_name": "Boiler Machine",
+	"machine_id": "machine004",
+	"current": 0,
+	"voltage": 0,
+	"power_factor": 0,
+	"active_power": 0.0,
+	"apparent_power": 0.0,
+	"reactive_power": 0.0,
+	"daily_energy": 0,
+	"monthly_energy": 0,
+	"yearly_energy": 0,
+	"idle_daily": 0,
+	"idle_monthly": 0,
+	"idle_yearly": 0
+}
+]
+    convertJsontoHtmlTable();
+    function convertJsontoHtmlTable()
+    {
+
+        var tablecolumns = [];
+        for (var i = 0; i < machinedata.length; i++) {
+            for (var key in machinedata[i]) {
+                if (tablecolumns.indexOf(key) === -1) {
+                    tablecolumns.push(key);
+                }
+            }
+        }
+
+        
+        var tabledata = document.createElement("table");
+        tabledata.classList.add("table");
+        tabledata.classList.add("table-striped");
+        tabledata.classList.add("table-bordered");
+        tabledata.classList.add("table-hover")
+
+       
+        var tr = tabledata.insertRow(-1);
+
+        for (var i = 0; i < tablecolumns.length; i++) {
+           
+            var th = document.createElement("th");
+            th.innerHTML = tablecolumns[i];
+            tr.appendChild(th);
+        }
+
+       
+        for (var i = 0; i < machinedata.length; i++) {
+            tr = tabledata.insertRow(-1);
+            for (var j = 0; j < tablecolumns.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = machinedata[i][tablecolumns[j]];
+            }
+        }
+
+        
+        var machinedatadivcontainer = document.getElementById("machinedatadivcontainer");
+        machinedatadivcontainer.innerHTML = "";
+        machinedatadivcontainer.appendChild(tabledata);
+    }
+</script>

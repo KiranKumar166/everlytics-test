@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>form</title>
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+ 
+ <script>
+     function validateForm() {
+                var x = document.forms["appform"]["Provide a name pipeline"].value;				
+				if (x == "" || x == null) {
+                    window.alert("Please enter the name of pipeline");
+                    return false;
+                }
+                else if (x.length < 5) {
+    	            alert("name must be contain more then 5 characters.");
+    	            return false;
+                }
+				else if (x = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?") {
+				    alert("can't use special characters ");
+					return false;
+				}
+				
+				var x = document.forms["appform"]["GCS project name"].value;	
+				if (x == "" || x == null) {
+                    alert("Please enter the project name");
+                    return false;
+                }
+				else if (x.length < 5) {
+    	            alert("project name must be contain more then 5 characters.");
+    	            return false;
+                }
+				else if (x = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?") {
+				    alert("can't use special characters ");
+					return false;
+				}
+				
+				var x = document.forms["appform"]["GCS bucket name"].value;	
+				if (x == "" || x == null) {
+                    alert("Please enter the bucket name");
+                    return false;
+                }
+				else if (x.length < 5) {
+    	            alert("bucket name must be contain more then 5 characters.");
+    	            return false;
+                }
+				else if (x = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?") {
+				    alert("can't use special characters ");
+					return false;
+				}
+				
+				var x = document.forms["appform"]["Input Cloud Storage File(s)"].value;	
+				if (x == "" || x == null) {
+                    alert("Please enter the location of file");
+                    return false;
+                }
+				else if (x.length < 5) {
+    	            alert("must be contain more then 5 characters.");
+    	            return false;
+                }
+				else if (x = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?") {
+				    alert("can't use special characters ");
+					return false;
+				}
+				
+				var x = document.forms["appform"]["GCS credentials"].value;	
+				if (x == "" || x == null) {
+                    alert("Please enter the credentials");
+                    return false;
+                }
+				else if (x.length < 5) {
+    	            alert("must be contain more then 5 characters.");
+    	            return false;
+                }
+				else if (x = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?") {
+				    alert("can't use special characters ");
+					return false;
+				}
+				
+				var x = document.forms["appform"]["Run Every"].value;	
+				if (x == "" || x == null) {
+                    alert("Please enter the run time");
+                    return false;
+                }
+				else if (x.length < 5) {
+    	            alert("project name must be contain more then 5 characters.");
+    	            return false;
+                }
+				else if (x = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?") {
+				    alert("can't use special characters ");
+					return false;
+				}
+}
+				
+ </script>
+ 
+ <style>
+ .container {
+       display: flex;
+    justify-content: center;
+	
+	flex-wrap: wrap;
+    
+    
+    margin: 15px 600px;
+    
+    text-align:center;
+      
+	 
+ }
+.form {
+       display: flex;
+    justify-content: center;
+	
+	flex-wrap: wrap;
+    width: 100%;
+    
+    margin: 15px auto;
+    
+    text-align:center;
+     border: 2px solid black; 
+	  background-color: white;
+ }
+.formleft {
+       display: flex;
+    justify-content: right;
+	float: left;
+	flex-wrap: wrap;
+    width: 39%;
+    
+    margin: 15px auto;
+    
+    text-align: center;
+      
+	  background-color: white;
+	  font-family: Open Sans; 
+	  font-size: 20px;
+ }
+.formright {
+       display: flex;
+    justify-content: right;
+	float: left;
+	flex-wrap: wrap;
+    width: 59%;
+    
+    margin: 15px auto;
+    
+    text-align:center;
+    border-left:1px solid black;
+	  background-color: white;
+	 font-family: Open Sans;
+	  font-size: 20px;
+ }
+ .formcreatebutton {
+       display: flex;
+    justify-content: right;
+	float: left;
+	flex-wrap: wrap;
+    width: 39%;
+    
+    margin: 15px auto;
+    
+    text-align: center;
+      
+	  background-color: white;
+	  font-family: Open Sans; 
+	  font-size: 20px;
+ }
+.formcancelbutton {
+       display: flex;
+    justify-content: left;
+	float: left;
+	flex-wrap: wrap;
+    width: 59%;
+    
+    margin: 15px auto;
+    
+    text-align:center;
+   
+	  background-color: white;
+	 font-family: Open Sans;
+	  font-size: 20px;
+ }
+ input[type=text], select {
+  width: 100%;
+  padding: 12px 5px;
+  margin: 8px 8px;
+  display: inline-block;
+  border: 1px solid #eee;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+input[type=Submit] {
+  width: 70%;
+  background-color: darkslateblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type=Submit]:hover {
+  opacity: 90%;
+}
+input[type=reset] {
+  width: 70%;
+  background-color: darkslateblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  opacity: 90%;
+}
+ </style>
+ </head>
+ <body>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+ 
+<div class="container">
+ 
+<form name="appform" action="/action_page.php" onsubmit="return validateForm()" method="post">
+
+<div class="form">
+
+
+<div class="formleft">
+<p>Select your source :</p>
+</div>
+
+<div class="formright">
+<p>Google Cloud Storage</p>
+</div>
+<div class="formleft">
+<p>Provide a name for pipeline :</p>
+</div>
+
+<div class="formright">
+<input type="text" name="Provide a name pipeline" placeholder="e.g., cust_shop_energy_gateway001">
+</div>
+<div class="formleft">
+<p>GCS project name :</p>
+</div>
+
+<div class="formright">
+<input type="text" name="GCS project name" placeholder="project-id">
+</div>
+<div class="formleft">
+<p>GCS bucket name :</p>
+</div>
+
+<div class="formright">
+<input type="text" name="GCS bucket name" placeholder="gs://your-bucket">
+</div>
+<div class="formleft">
+<p>Input Cloud Storage File(s) :</p>
+</div>
+
+<div class="formright">
+<input type="text" name="Input Cloud Storage File(s)" placeholder="GCS location of your files">
+</div>
+<div class="formleft">
+<p>GCS credentials :</p> 
+</div>
+
+<div class="formright">
+<input type="text" name="GCS credentials " placeholder="Example: gs://your-bucket/your-files/01.csv">
+</div>
+<div class="formleft">
+<p>Run Every :</p> 
+</div>
+
+<div class="formright">
+<input type="text" name="Run Every " placeholder="(in minutes)">
+</div>
+
+<div class="formcreatebutton">
+<input type="Submit" value="Create"> 
+</div>
+
+<div class="formcancelbutton">
+<input type="reset" value="Cancel">
+</div>
+
+</div>
+
+</form>
+
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </body>
+ </html>
